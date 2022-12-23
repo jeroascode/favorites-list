@@ -1,23 +1,36 @@
-body{
+body {
   width: 100%;
   height: 100vh;
 }
 
-.container-products{
+.container-products {
   display: flex;
   flex-direction: column;
 }
 
-.card-product{
-  display: flex;
-  gap: 10px;
-}
-
-.container-nav{
+.container-nav {
   display: flex;
   gap: 15px;
   align-items: center;
   justify-content: center;
   border-bottom: solid 1px gray;
   padding: 15px 0;
+}
+
+.container-products-title{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0;
+  border: 1px solid gray;
+}
+
+.container-cards{
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto, auto, auto;
+  gap: 10px;
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Cookies from "universal-cookie";
+import CardProduct from "../components/CardProduct";
 
 const Products = () => {
   const cookies = new Cookies();
@@ -23,18 +24,17 @@ const Products = () => {
 
   return (
     <div>
-      <div>
-        <h1>Productos</h1>
-        <label>{userName}</label>
+      <div className="container-products-title">
+        <h2>{userName}</h2>
         <button onClick={handleLogOut}>Cerrar Sesión</button>
       </div>
       <div className="container-products">
-        {products.map((product, i) => (
-          <div key={i} className="card-product">
-            <label>{product.name}</label>
-            <label>{product.available}</label>
-          </div>
-        ))}
+        <h1>Productos</h1>
+        <div className="container-cards">
+          {products.map((product, i) => (
+            <CardProduct key={i} product={product} />
+          ))}
+        </div>
       </div>
     </div>
   );
