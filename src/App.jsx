@@ -21,10 +21,12 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Link to="/">Inicio</Link>
-      <Link to="/create-product">Crear Producto</Link>
-      <Link to="/register">Registrar Usuario</Link>
-      <Link to="/login">Iniciar Sesion</Link>
+      <nav className="container-nav">
+        <Link to="/">Inicio</Link>
+        <Link to="/create-product">Crear Producto</Link>
+        <Link to="/register">Registrar Usuario</Link>
+        <Link to="/login">Iniciar Sesion</Link>
+      </nav>
       <Routes>
         <Route exact path="/" element={<MainPage />} />
         <Route path="/create-product" element={<CreateProduct />} />
