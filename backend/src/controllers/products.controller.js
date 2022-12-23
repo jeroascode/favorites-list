@@ -1,10 +1,10 @@
 const productController = {};
-const product = require("../models/product");
+const Product = require("../models/product");
 
 productController.createProduct = async (req, res) => {
   try {
     const reqProduct = req.body;
-    const newProduct = new product({
+    const newProduct = new Product({
       name: reqProduct.name,
       available: reqProduct.available,
     });
@@ -17,7 +17,7 @@ productController.createProduct = async (req, res) => {
 
 
 productController.getProducts = async (req, res) => {
-  const products = await product.find();
+  const products = await Product.find();
   res.json({ products: products });
 };
 
