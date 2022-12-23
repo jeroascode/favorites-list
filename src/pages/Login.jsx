@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Cookies from "universal-cookie";
 const baseURL = "http://localhost:5001/api/users/login";
 
 const Login = () => {
@@ -15,16 +16,12 @@ const Login = () => {
       .post(baseURL, { document: document })
       .then((res) => {
         const user = res.data;
-        console.log(user)
-        // console.log(user);
-        // const cookies = new Cookies();
-        // cookies.set("_id", client._id, { path: "/" });
-        // cookies.set("managerName", client.managerName, { path: "/" });
-        // cookies.set("teamName", client.teamName, { path: "/" });
+        const cookies = new Cookies();
+        cookies.set("userName", user.name, { path: "/" });
         window.location.href = "/products";
       })
-      .catch((error) => {
-        console.log(error);
+      .catch((err) => {
+        alert(err);
       });
   };
 
